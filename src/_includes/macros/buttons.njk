@@ -1,5 +1,5 @@
 {% macro button(text, style) %}
-    {% set rootClass = 'inline-block text-base md:text-lg leading-[26px] md:leading-[28px] py-[14px] px-[32px] font-bold rounded-full text-white duration-300' %}
+    {% set rootClass = 'inline-block text-base md:text-lg leading-[26px] md:leading-[28px] py-[14px] pl-[32px] pr-[31px] font-bold rounded-full text-white duration-300' %}
     {% if style == 'one' %}
         <a title="call to action button" class="{{rootClass}}  bg-black-500 hover:bg-blue-500" href="/">{{text}}</a>
     {% elif style == 'two' %}
