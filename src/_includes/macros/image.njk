@@ -1,0 +1,36 @@
+/** 
+ * @Author: flydreame 
+ * @Date: 2022-08-26 13:51:34 
+ * @Desc: Image macro
+ * @see: https://www.stefanjudis.com/snippets/a-picture-element-to-load-correctly-resized-webp-images-in-html/ 
+ */
+{% macro image(file) %}
+    <picture>
+        <!-- load webp images if supported -->
+        <source type="image/webp"
+            srcset="
+                https://images.ctfassets.net/.../paris.jpg?w=100&fm=webp 100w,
+                https://images.ctfassets.net/.../paris.jpg?w=200&fm=webp 200w,
+                ..."
+            sizes="
+                (max-width: 768px) calc(100vw - 3em),
+                (max-width: 1376px) calc(50vw - 8em),
+                550px">
+        <!-- load traditional supported image format -->
+        <img
+            srcset="
+                https://images.ctfassets.net/.../paris.jpg?w=100&fm=jpg&fl=progressive 100w,
+                https://images.ctfassets.net/.../paris.jpg?w=200&fm=jpg&fl=progressive 200w,
+                ..."
+            sizes="
+                (max-width: 768px) calc(100vw - 3em),
+                (max-width: 1376px) calc(50vw - 8em),
+                550px"
+            src="https://images.ctfassets.net/.../paris.jpg"
+            alt="Buildings of Paris"
+            loading="lazy"
+            decoding="async"
+            width="1243"
+            height="1500">
+    </picture>
+{% endmacro %}

@@ -1,0 +1,11 @@
+{% macro header('tag', 'text', 'size', 'classes') %}
+    {% if size == 'xl' %}
+        <{{tag}} class="text-[56px] leading-[70.76px] font-extrabold">{{text}}</{{tag}}>
+    {% elif size == 'l' %}
+        <{{tag}} class="text-[40px] leading-[50.4px] font-extrabold">{{text}}</{{tag}}>
+    {% elif size == 'm' %}
+        <{{tag}} class="text-[40px] leading-[50.4px] font-extrabold">{{text}}</{{tag}}>
+    {% else %}
+        <{{tag}} class="text-[40px] leading-[50.4px] font-extrabold">{{text}}</h1>
+    {% endif %}
+{% endmacro %}

@@ -1,0 +1,10 @@
+{% macro button(text, style) %}
+    {% set rootClass = 'inline-block text-base md:text-lg leading-[26px] md:leading-[28px] py-[14px] px-[32px] font-bold rounded-full text-white duration-300' %}
+    {% if style == 'one' %}
+        <a title="call to action button" class="{{rootClass}}  bg-black-500 hover:bg-blue-500" href="/">{{text}}</a>
+    {% elif style == 'two' %}
+        <a title="call to action button" class="{{rootClass}} bg-gradient-to-b from-[#FF6F48] to-[#F02AA6]" href="/">{{text}}</a>
+    {% else %}
+        <a title="call to action button" class="{{rootClass}} bg-gradient-to-b from-[#4851FF] to-[#F02AA6]" href="/">{{text}}</a>
+    {% endif %}
+{% endmacro %}
